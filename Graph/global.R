@@ -1,11 +1,15 @@
 library(igraph)
 plotMe <- function(x) {
   ## undirected
-  g <- graph.atlas(600)
+  #g <- graph.atlas(600)
   ## directed
-  # g <- as.directed(graph.atlas(400))
-  V(g)$name <- c("Mark","Lex","Jitse","Bob","Joseph")
-  V(g)$label <- V(g)$name
+  #g <- as.directed(graph.atlas(400))
+  #V(g)$name <- c("Mark","Lex","Jitse","Bob","Vincent", "Moegtaar")
+  #V(g)$label <- V(g)$name
+  a <- c('a','b','c','d','e','d','e','f','g','k','l')
+  b <- c('d','e','f','g','k','a','b','c','d','e')
+  c <- as.data.frame(cbind(a,b))
+  g <- graph.data.frame(c)
   #totalEdges <<- ecount(g) ## telt het aantal edges
   #vcount(g) ## telt het aantal vertices ofwel de punten waar meerdere edges samen komen
   ## set seed to make the layout reproducible

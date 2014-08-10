@@ -4,7 +4,7 @@ shinyUI(fluidPage(
     
     sidebarPanel(
       h3('connected Nodes'),
-      sliderInput('nodes', 'select minimum amount of edges between nodes', 1, min = 1, max = 4, step = 1),
+      sliderInput('nodes', 'select minimum indegree', 1, min =0, max = 4, step = 1),
       br(),
       br(),
       plotOutput('degreeHist')
@@ -13,7 +13,7 @@ shinyUI(fluidPage(
     mainPanel(
       tabsetPanel(
         tabPanel("Graph",
-          h4('Minimum amount of edges between nodes: '),
+          h4('Minimum degree: '),
           verbatimTextOutput('nodes'),
           h4('How many nodes left: '),
           verbatimTextOutput('totalNodes'),
