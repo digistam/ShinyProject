@@ -12,10 +12,11 @@ plotMe <- function(x,y) { #,y) {
   layout1 <- layout.auto(g)
   #plot(g, layout = layout1)
   bad.vs <- V(g)[degree(g) < y]
-  ng <<- delete.vertices(g,bad.vs)
-  V(ng)$size=degree(ng)*2
+  ng <- delete.vertices(g,bad.vs)
+  ng <<- simplify(ng)
+  V(ng)$size=degree(ng)*5
   V(ng)$color=degree(ng)+1
-  V(ng)$label.cex <- degree(ng)
+  V(ng)$label.cex <- degree(ng)*0.8
   #plot(ng)
   plot(ng, layout=layout1)
   #totalNodes <<- vcount(ng)
