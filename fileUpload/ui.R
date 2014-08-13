@@ -21,6 +21,8 @@ shinyUI(pageWithSidebar(
                p('First, click "Choose File" in the left column.'),
                #p('select "testgraph.csv" in the working directory'),
                p('Take great care of the separator which has been used in the csv file'),
+               p('If you see this error: "the data frame should contain at least two columns"'),
+               p('you probably choose the wrong separator, try a different one !'),
                p('The example file "testgraph.csv" in the working directory is comma separated'),
                p('Check "comma" as CSV separator if you use the example CSV file'),
                p('Select the "Graph" tab to see the Graph output'),
