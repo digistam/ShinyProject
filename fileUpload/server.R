@@ -7,7 +7,8 @@ shinyServer(function(input,output){
     if(is.null(inFile))
       return(NULL)
     dt = read.csv(inFile$datapath, sep=input$sep, quote="'")
-    output$newGraph <- suppressWarnings(renderPlot({plotMe(dt,input$nodes)
+    plotMe(dt,input$nodes)
+    output$newGraph <- suppressWarnings(renderPlot({
                                    plot(ng)
                                    output$nodeCount <- renderText({vcount(ng)})
                                    output$edgeCount <- renderText({ecount(ng)})
@@ -18,7 +19,11 @@ shinyServer(function(input,output){
                                    output$degreeList <- renderTable({ddf})
                                    edf <- as.data.frame(get.edgelist(ng))
                                    names(edf) <- c('node A','node B')
-                                   output$edgeList <- renderTable({edf})                                                                   
+                                   output$edgeList <- renderTable({edf})
+                                   
                                    }))
-  })
+    output$adjacency <- suppressWarnings(renderTable({
+                                  as.matrix(get.adjacency(ng))
+                                    })
+  )})
 })

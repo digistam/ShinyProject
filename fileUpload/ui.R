@@ -1,6 +1,6 @@
 library(shiny)
 shinyUI(pageWithSidebar(
-  headerPanel( "SNA learning example", "Graph"),
+  headerPanel( "Graph explorer", "Graph"),
   sidebarPanel(
     fileInput('file1', 'Select csv file', accept=c('text/csv')),
     #checkboxInput('header', 'Header', TRUE),
@@ -16,17 +16,18 @@ shinyUI(pageWithSidebar(
   ),
   mainPanel(
     tabsetPanel(
-      tabPanel("Information",
+      tabPanel("Introduction",
+               HTML('<img src="graphs.jpg" />'),
                h4('How does it work ...'),
-               p('First, click "Choose File" in the left column.'),
-               #p('select "testgraph.csv" in the working directory'),
-               p('Take great care of the separator which has been used in the csv file'),
-               p('If you see this error: "the data frame should contain at least two columns"'),
-               p('you probably choose the wrong separator, try a different one !'),
-               p('The example file "testgraph.csv" in the working directory is comma separated'),
-               p('Check "comma" as CSV separator if you use the example CSV file'),
-               p('Select the "Graph" tab to see the Graph output'),
-               p('Use the "Degree slider" in the left column to select nodes with more or less edges')
+               HTML('First, click <b>"Choose File"</b> in the left column.'),
+               HTML('Take great care of the <b>separator</b> which has been used in the csv file. '),
+               HTML('If you see this error: <b style="color: red;">"the data frame should contain at least two columns"</b> '),
+               HTML('you probably did choose the wrong separator, try a different one !'),
+               HTML('The example file <b>"testgraph.csv"</b> in the working directory is comma separated, '),
+               HTML('check <b>"comma"</b> as CSV separator if you would like to use the example CSV file.'),
+               p(),
+               HTML('Select the <b>"Graph"</b> tab to see the Graph output. '),
+               HTML('You can use the <b>"Degree slider"</b> (left column) to select nodes with more or less edges.')
       ),
       tabPanel("Graph",
         plotOutput('newGraph', height = 600, width = 600),
@@ -36,6 +37,7 @@ shinyUI(pageWithSidebar(
         verbatimTextOutput("edgeCount"),
         p('Graph density: '),
         verbatimTextOutput("density"),
+        #tableOutput('adjacency'),
         tableOutput("contents")#,
         #h2('Legenda: '),
         #img(src="yellow.png", height = 25, width = 25),
@@ -45,7 +47,12 @@ shinyUI(pageWithSidebar(
         #img(src="green.png", height = 25, width = 25),
         #img(src="red.png", height = 25, width = 25),
         #p('degrees: 6, 5, 4, 3, 2, 1')
-        ) 
+        ),
+      tabPanel("Matrix",
+               HTML('<h4>Adjacency matrix</h4>'),
+               p(),
+               tableOutput('adjacency')
+               )
       )
   )
 ))
