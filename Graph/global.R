@@ -1,4 +1,7 @@
-library(igraph)
+if (!require("igraph")) {
+  install.packages("igraph", repos="http://cran.rstudio.com/") 
+  library("igraph")
+}
 plotMe <- function(x) {
   ## undirected
   #g <- graph.atlas(600)
@@ -18,7 +21,7 @@ plotMe <- function(x) {
   #plot(g, layout = layout1)
   bad.vs <- V(g)[degree(g) < x]
   ng <- delete.vertices(g,bad.vs)
-  V(ng)$size=degree(ng)*5
+  V(ng)$size=degree(ng)*10
   V(ng)$color=degree(ng)+1
   V(ng)$label.cex <- degree(ng)
   plot(ng)

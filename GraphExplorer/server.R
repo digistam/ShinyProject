@@ -1,5 +1,4 @@
 library(shiny)
-library(igraph)
 shinyServer(function(input,output){
   observe({
     inFile<-input$file1
