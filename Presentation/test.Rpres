@@ -1,0 +1,76 @@
+Graph Explorer presentation
+========================================================
+author: Mark Stam
+date: `r date()`
+transition:rotate
+font-family: 'Trebuchet MS'
+
+Contents
+========================================================
+
+For more details on authoring R presentations click the
+**Help** button on the toolbar.
+
+- Bullet 1
+- Bullet 2 
+- Bullet 3
+
+Social Network Analysis
+========================================================
+Social network analysis (SNA) is the use of network theory to analyse social networks. Social network analysis views social relationships in terms of network theory, consisting of nodes, representing individual actors within the network. These networks are often depicted in a social network diagram, where nodes are represented as points and ties are represented as lines.
+
+```{r, echo=FALSE}
+if (!require("igraph")) {
+  install.packages("igraph", repos="http://cran.rstudio.com/") 
+  library("igraph") 
+}
+a <- c('Donald','Goofy','Minnie','Donald','Goofy')
+b <- c('Mickey','Minnie','Mickey','Minnie')
+c <- as.data.frame(cbind(a,b))
+g <- graph.data.frame(c, directed = F)
+V(g)$size=degree(g)*10
+V(g)$color=degree(g)+1
+V(g)$label.cex <- degree(g)
+set.seed(111)
+layout1 <- layout.fruchterman.reingold(g)
+plot(g, layout = layout1)
+```
+
+Graph information
+========================================================
+The Graph explorer will show some important details about the network,
+like who's connected to who and which nodes have an higher degree than other nodes
+```{r, echo=FALSE}
+as.matrix(get.adjacency(g))
+```
+```{r, echo=FALSE}
+ddf <- sort(degree(g), decreasing = T)
+ddf <- as.data.frame(ddf)
+names(ddf) <- c('degree rank') 
+ddf
+```
+
+
+
+Slide With Plot
+========================================================
+
+```{r, echo=FALSE}
+plot(cars)
+```
+
+Graph example
+========================================================
+```{r, echo=FALSE}
+library(igraph)
+a <- c('Donald Duck','Goofey','Minnie Mouse','Donald Duck','Goofey')
+b <- c('Mickey Mouse','Minnie Mouse','Mickey Mouse','Minnie Mouse')
+c <- as.data.frame(cbind(a,b))
+g <- graph.data.frame(c)
+V(g)$size=degree(g)*10
+V(g)$color=degree(g)+1
+V(g)$label.cex <- degree(g)
+set.seed(111)
+layout1 <- layout.fruchterman.reingold(g)
+plot(g, layout = layout1) 
+```
