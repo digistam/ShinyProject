@@ -50,7 +50,7 @@ shinyUI(pageWithSidebar(
         #img(src="red.png", height = 25, width = 25),
         #p('degrees: 6, 5, 4, 3, 2, 1')
         ),
-      tabPanel("Matrix",
+      tabPanel("Details",
                HTML('<h4>Adjacency matrix</h4>'),
                p(),
                tableOutput('adjacency')
