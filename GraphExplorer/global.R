@@ -1,4 +1,7 @@
-library(igraph)
+if (!require("igraph")) {
+  install.packages("igraph", repos="http://cran.rstudio.com/") 
+  library("igraph") 
+}
 plotMe <- function(x,y) {
   g <- graph.data.frame(x, directed=F)
   ## set seed to make the layout reproducible

@@ -9,9 +9,9 @@ shinyUI(pageWithSidebar(
     ),
     h4('Degree: '),
     sliderInput('nodes', 'select minimum degree', 0, min =0, max = 5, step = 1),
-    tableOutput('degreeList'),
-    h4('Node connections: '),
-    tableOutput('edgeList')
+    tableOutput('degreeList')#,
+    #h4('Node connections: '),
+    #tableOutput('edgeList')
     
   ),
   mainPanel(
