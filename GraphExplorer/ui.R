@@ -3,8 +3,10 @@ if (!require("shiny")) {
   library("shiny") 
 }
 shinyUI(pageWithSidebar(
-  headerPanel( "Graph explorer", "Graph"),
+  headerPanel( "GraphExplorer", "GraphExplorer"),
   sidebarPanel(
+    HTML('<a target=_blank href="https://raw.githubusercontent.com/digistam/ShinyProject/master/GraphExplorer/testgraph.csv">click here to download a demo csv file</a>'),  
+    p(),
     fileInput('file1', 'Select csv file', accept=c('text/csv')),
     #checkboxInput('header', 'Header', TRUE),
     radioButtons('sep', 'CSV separator:',
@@ -24,12 +26,6 @@ shinyUI(pageWithSidebar(
                h4('How does it work ...'),
                HTML('First, click <b>"Choose File"</b> in the left column.'),
                HTML('Take great care of the <b>separator</b> which has been used in the csv file. '),
-               HTML('An example CSV file is available on GitHub:'),
-               p(),
-               HTML('<a target=_blank href="https://raw.githubusercontent.com/digistam/ShinyProject/master/GraphExplorer/testgraph.csv">download here</a>'),  
-               p(),
-               HTML('For this example CSV file, check <b>"comma"</b> as CSV separator in the left column.'),
-               p(),
                HTML('After loading the CSV file, you can select the <b>"Graph"</b> tab to see the Graph output, '),
                HTML('or the "Details" tab to see the Adjacency matrix etc. '),
                p(),
