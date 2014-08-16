@@ -22,14 +22,17 @@ shinyUI(pageWithSidebar(
   mainPanel(
     tabsetPanel(
       tabPanel("Introduction",
-               HTML('<img src="graphs.jpg" />'),
+               
                h4('How does it work ...'),
                HTML('First, click <b>"Choose File"</b> in the left column.'),
                HTML('Take great care of the <b>separator</b> which has been used in the csv file. '),
                HTML('After loading the CSV file, you can select the <b>"Graph"</b> tab to see the Graph output, '),
                HTML('or the "Details" tab to see the Adjacency matrix etc. '),
                p(),
-               HTML('You can use the <b>"Degree slider"</b> (see left column) to select nodes with more or less edges.')
+               HTML('You can use the <b>"Degree slider"</b> (see left column) to select nodes with more or less edges.'),
+               p(),
+               HTML('<img src="graphs.jpg" />')
+               
       ),
       tabPanel("Graph",
         plotOutput('newGraph', height = 600, width = 600),
