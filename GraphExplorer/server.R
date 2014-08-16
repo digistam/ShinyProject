@@ -1,4 +1,7 @@
-library(shiny)
+if (!require("shiny")) {
+  install.packages("shiny", repos="http://cran.rstudio.com/") 
+  library("shiny") 
+}
 shinyServer(function(input,output){
   observe({
     inFile<-input$file1

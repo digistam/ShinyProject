@@ -1,4 +1,7 @@
-library(shiny)
+if (!require("shiny")) {
+  install.packages("shiny", repos="http://cran.rstudio.com/") 
+  library("shiny") 
+}
 shinyUI(pageWithSidebar(
   headerPanel( "Graph explorer", "Graph"),
   sidebarPanel(
