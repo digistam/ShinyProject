@@ -33,12 +33,6 @@ shinyUI(pageWithSidebar(
       ),
       tabPanel("Graph",
         plotOutput('newGraph', height = 600, width = 600),
-        p('Unique nodes in graph: '),
-        verbatimTextOutput("nodeCount"),
-        p('Unique edges in graph: '),
-        verbatimTextOutput("edgeCount"),
-        p('Graph density: '),
-        verbatimTextOutput("density"),
         #tableOutput('adjacency'),
         tableOutput("contents")#,
         #h2('Legenda: '),
@@ -51,9 +45,16 @@ shinyUI(pageWithSidebar(
         #p('degrees: 6, 5, 4, 3, 2, 1')
         ),
       tabPanel("Details",
-               HTML('<h4>Adjacency matrix</h4>'),
+               p('Unique nodes in graph: '),
+               verbatimTextOutput("nodeCount"),
+               p('Unique edges in graph: '),
+               verbatimTextOutput("edgeCount"),
+               p('Graph density: '),
+               verbatimTextOutput("density"),
+               p('Adjacency matrix'),
                p(),
-               tableOutput('adjacency')
+               tableOutput('adjacency'),
+               HTML('Please use the slider to change the minimum degree value')
                )
       )
   )
