@@ -19,14 +19,22 @@ Social network analysis (SNA) is the use of network theory to analyse social net
 __Graph explorer__, a web application running on the Shiny server framework, takes a CSV file with nodes as input. The output is a visual analysis of connections and degrees.
 
 ## Requirements
-This project requires two additional packages:
+When run from computer, this project requires two additional packages:
 
 * shiny
 * igraph
 
 It has been tested with R version 3.0.2 (2013-09-25), platform i386-w64-mingw32/i386 (32-bit).
+
+When run on-line, additional packages are not needed, just browse to:
+
+[dd](http://digistam.shinyapps.io/GraphExplorer)
+
 ## Scripts
-There is one script: __run_analysis.R__. Download the script from this repo. You can [source the script](http://www.dummies.com/how-to/content/how-to-source-a-script-in-r.html), after which the following functions are available within your R environment.
+There are three scripts: 
+
+* __run_analysis.R__
+* . Download the script from this repo. You can [source the script](http://www.dummies.com/how-to/content/how-to-source-a-script-in-r.html), after which the following functions are available within your R environment.
 * _getUCIData()_
 * _getUCIDataWin()_
 * _run_analysis()_
