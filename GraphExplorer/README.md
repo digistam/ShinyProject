@@ -1,10 +1,8 @@
 Developing Data Products Peer Assignment
 =========================================
-Write a shiny application with associated supporting documentation. 
-
-The documentation should be thought of as whatever a user will need to get started using your application.
-
-Deploy the application on Rstudio's shiny server.
+Write a shiny application with associated supporting documentation.<br /> 
+The documentation should be thought of as whatever a user will need to get started using your application.<br />
+Deploy the application on Rstudio's shiny server.<br />
 Share your server.R and ui.R code on github
 
 The application must include the following:
