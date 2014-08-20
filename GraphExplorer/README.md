@@ -1,9 +1,12 @@
 Developing Data Products Peer Assignment
 =========================================
 Write a shiny application with associated supporting documentation. 
+
 The documentation should be thought of as whatever a user will need to get started using your application.
+
 Deploy the application on Rstudio's shiny server.
 Share your server.R and ui.R code on github
+
 The application must include the following:
 
 * Some form of input (widget: textbox, radio button, checkbox, ...)
@@ -12,12 +15,18 @@ The application must include the following:
 * You must also include enough documentation so that a novice user could use your application.
 * The documentation should be at the Shiny website itself. Do not post to an external link.
 
-The Shiny application in question is entirely up to you. However, if you're having trouble coming up with ideas, you could start from the simple prediction algorithm done in class and build a new algorithm on one of the R datasets packages. Please make the package simple for the end user, so that they don't need a lot of your prerequisite knowledge to evaluate your application. You should emphasize a simple project given the short time frame.  
-
 ## Introduction
-One of the most exciting areas in all of data science right now is wearable computing. The purpose of this project is to analyze data collected from accelerometers from the Samsung Galaxy S smartphone. The data is available [here (zip file)](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip). A full description [is available](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones) at the site where the data was obtained.
+Social network analysis (SNA) is the use of network theory to analyse social networks. Social network analysis views social relationships in terms of network theory, consisting of nodes, representing individual actors within the network. These networks are often depicted in a Graph, where nodes (or vertices) are represented as points and edges are represented as lines.
+
+__Graph explorer__, a web application running on the Shiny server framework, takes a CSV file with nodes as input. The output is a visual analysis of connections and degrees.
+
 ## Requirements
-This project does not require any additional packages. It has been tested with R version 3.0.2 (2013-09-25), platform i386-w64-mingw32/i386 (32-bit).
+This project requires two additional packages:
+
+* shiny
+* igraph
+
+It has been tested with R version 3.0.2 (2013-09-25), platform i386-w64-mingw32/i386 (32-bit).
 ## Scripts
 There is one script: __run_analysis.R__. Download the script from this repo. You can [source the script](http://www.dummies.com/how-to/content/how-to-source-a-script-in-r.html), after which the following functions are available within your R environment.
 * _getUCIData()_
